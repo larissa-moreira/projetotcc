@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jogo</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity=
+	"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="Css/estilo.css">
+
+	<script src="Js/script.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="principal" style=" background-image: url(Resources/Images/fazenda.jpg);">
+
+		<audio id="audio" autoplay="autoplay" loop="loop">
+			<source src="Resources/Audios/Little-Bird.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+
+		<h2 id="som" onclick="mute()"><i id="icon_mute" class="fas fa-volume-down"></i></h2>
+
+		<!-- NOME DO JOGO-->
+		<div id="corda1" class="corda" style="background-image: url(Resources/Images/cordas.png); "></div>
+		<div id="corda2" class="corda" style="background-image: url(Resources/Images/cordas.png); "></div>
+		<div class="placa" style="background-image: url(Resources/Images/placa.jpg); ">
+			<header>JOGO DE MATEMÁTICA</header>
+		</div>
+		<!-- BOTÃO 1-->
+  			<input class="mouse" id="botao1" type="image" src="RESOURCES/IMAGES/fenos.png" data-toggle="modal" data-target="#exampleModalUm">
+  			<a class="mouse" onclick="redirecionarUm()" id="ano1" href=""><b>1º ANO</b></a>
+    			 
+
+  		<!-- MODAL 1-->
+			<div class="modal fade" id="exampleModalUm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelUm" aria-hidden="true">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+			          <div class="modal-header">
+			            <h5 class="modal-title" id="exampleModalLabelUm">Olá, Fazendeiro(a)!</h5>
+			          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			            <span aria-hidden="true">&times;</span>
+			          </button>
+			          </div>
+			        <div class="modal-body">
+			          Qual é o seu nome:
+			          <input type="text" name="nome1" id="nomeUm">
+			        </div>
+			        <div class="modal-footer">
+			        <button onclick="redirecionarUm()" type="button" class="btn btn-primary" value="redirecinaUm" >Salvar</button>
+			      </div>
+			    </div>
+			  </div>
+			</div> 
+		<!-- BOTÃO 2-->
+  			<input class="mouse" id="botao2" type="image" src="RESOURCES/IMAGES/fenos.png" data-toggle="modal" data-target="#exampleModalDois">
+    			<a class="mouse" onclick="redirecionarDois()" id="ano2" href=""><b>2º ANO</b></a> 
+
+  		<!-- MODAL 2-->
+			<div class="modal fade" id="exampleModalDois" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelDois" aria-hidden="true">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+			          <div class="modal-header">
+			            <h5 class="modal-title" id="exampleModalLabelDois">Olá, Fazendeiro(a)!</h5>
+			          <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+			            <span aria-hidden="true">&times;</span>
+			          </button>
+			          </div>
+			        <div class="modal-body">
+			          Qual é o seu nome:
+			          <input type="text" name="nome2" id="nomeDois">
+			        </div>
+			        <div class="modal-footer">
+			        <button  onclick="redirecionarDois()" type="button" class="btn btn-primary" value="redirecionaDois">Salvar</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		<!-- BOTÃO 3-->
+  			 <input class="mouse" id="botao3" type="image" src="RESOURCES/IMAGES/fenos.png" data-toggle="modal" data-target="#exampleModalTres">
+    			<a class="mouse" onclick="redirecionarTres()" id="ano3" href=""><b>3º ANO</b></a>  
+
+  		<!-- MODAL 3-->
+			<div class="modal fade" id="exampleModalTres" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelTres" aria-hidden="true">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+			          <div class="modal-header">
+			            <h5 class="modal-title" id="exampleModalLabelTres">Olá, Fazendeiro(a)!</h5>
+			          <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+			            <span aria-hidden="true">&times;</span>
+			          </button>
+			          </div>
+			        <div class="modal-body">
+			          Qual é o seu nome:
+			          <input type="text" name="nome3" id="nomeTres">
+			        </div>
+			        <div class="modal-footer">
+			        <button onclick="redirecionarTres()" type="button" class="btn btn-primary">Salvar</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		<!-- BOTÃO 4-->
+  			<input class="mouse" id="botao4" type="image" src="RESOURCES/IMAGES/fenos.png" data-toggle="modal" data-target="#exampleModalQuatro">
+    			<a class="mouse" onclick="redirecionarQuatro()" id="ano4" href=""><b>4º ANO</b></a>
+
+  		<!-- MODAL -->
+			<div class="modal fade" id="exampleModalQuatro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelQuatro" aria-hidden="true">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+			          <div class="modal-header">
+			            <h5 class="modal-title" id="exampleModalLabelQuatro">Olá, Fazendeiro(a)!</h5>
+			          <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+			            <span aria-hidden="true">&times;</span>
+			          </button>
+			          </div>
+			        <div class="modal-body">
+			          Qual é o seu nome:
+			          <input type="text" name="nome4" id="nomeQuatro">
+			        </div>
+			        <div class="modal-footer">
+			        <button onclick="redirecionarQuatro()" type="button" class="btn btn-primary">Salvar</button>
+			      </div>
+			    </div>
+			  </div>
+			</div> 
+		<!-- BOTÃO 5-->
+  			<input class="mouse" id="botao5" type="image" src="RESOURCES/IMAGES/fenos.png" data-toggle="modal" data-target="#exampleModalCinco">
+    			<a class="mouse" onclick="redirecionarCinco()" id="ano5" href=""><b>5º ANO</b></a>
+
+  		<!-- MODAL -->
+			<div class="modal fade" id="exampleModalCinco" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelCinco" aria-hidden="true">
+			    <div class="modal-dialog" role="document">
+			      <div class="modal-content">
+			          <div class="modal-header">
+			            <h5 class="modal-title" id="exampleModalLabelCinco">Olá, Fazendeiro(a)!</h5>
+			          <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+			            <span aria-hidden="true">&times;</span>
+			          </button>
+			          </div>
+			        <div class="modal-body">
+			          Qual é o seu nome:
+			          <input type="text" name="nome5" id="nomeCinco">
+			        </div>
+			        <div class="modal-footer">
+			        <button onclick="redirecionarCinco()" type="button" class="btn btn-primary">Salvar</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+		</div>	  
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity=
+	"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity=
+	"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity=
+	"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
