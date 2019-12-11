@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sequência Numérica</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity=
+	"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="Css/estilo2.css">
+
+	<script src="../../Js/script.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+</head>
+<body>
+	<div class="container">
+		<div class="principalDois">
+		<audio id="audio" autoplay="autoplay" loop="loop">
+			<source src="../../Resources/Audios/Music-Box-Puzzles.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+
+		<h2 id="som" onclick="mute()"><i id="icon_mute" class="fas fa-volume-down"></i></h2>
+
+		<p><b> Coloque os números de acordo com as figuras.</b></p>
+
+		<div id="divCavalo"><img class="img1" src="../../Resources/Images/cavalo.jpg"></div> 
+		<div id="divUm" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img2" id="target1" 
+			src="../../Resources/Images/um.jpg" ondragstart="dragStart(event)"></div>
+		<div id="divVazia1" class="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+		<div id="divGalinha"><img class="img1" src="../../Resources/Images/galinhas.jpg"></div> 
+		<div id="divDois" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img2" id="target2" 
+			src="../../Resources/Images/dois.png" ondragstart="dragStart(event)"></div>
+		<div id="divVazia2" class="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+		<div id="divPorco"><img class="img1" src="../../Resources/Images/porquinhos.jpg"></div> 
+		<div id="divTres" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img2" id="target3" 
+			src="../../Resources/Images/tres.png" ondragstart="dragStart(event)"></div>
+		<div id="divVazia3" class="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+		<div id="divPato"><img class="img1" src="../../Resources/Images/patinhos.jpg"></div> 
+		<div id="divQuatro" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img2" id="target4" 
+			src="../../Resources/Images/quatro.jpg" draggable="true" ondragstart="dragStart(event)"></div>
+		<div id="divVazia4" class="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+		<div id="divOvelha"><img class="img1" src="../../Resources/Images/ovelhinhas.jpg"></div> 
+		<div id="divCinco" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img2" id="target5" 
+			src="../../Resources/Images/cinco.jpg" draggable="true" ondragstart="dragStart(event)"></div>
+		<div id="divVazia5" class="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+		<div id="divVaca"><img class="img1" src="../../Resources/Images/vacas.jpg"></div> 
+		<div id="divSeis" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img2" id="target6" 
+			src="../../Resources/Images/seis.png" draggable="true" ondragstart="dragStart(event)"></div>
+		<div id="divVazia6" class="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+		<div id="divPeixe"><img class="img1" src="../../Resources/Images/peixes.jpg"></div> 
+		<div id="divSete" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img2" id="target7" 
+			src="../../Resources/Images/sete.jpg" draggable="true" ondragstart="dragStart(event)"></div>
+		<div id="divVazia7" class="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+		<div id="divAnimais"><img class="img1" src="../../Resources/Images/animais.jpg"></div> 
+		<div id="divOito" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img2" id="target8" 
+			src="../../Resources/Images/oito.png" draggable="true" ondragstart="dragStart(event)"></div>
+		<div id="divVazia8" class="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		
+		<div id="divPassaro"><img class="img1" src="../../Resources/Images/passarinhos.png"></div> 
+		<div id="divNove" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img2" id="target9" 
+			src="../../Resources/Images/nove.jpg" draggable="true" ondragstart="dragStart(event)"></div>
+		<div id="divVazia9" class="div" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function dragStart(event) {
+		  event.dataTransfer.setData("text", event.target.id);
+		}
+
+		function allowDrop(event) {
+				  event.preventDefault();
+		}
+
+		function drop(event) {
+		  event.preventDefault();
+		  var data = event.dataTransfer.getData("text");
+		  event.target.appendChild(document.getElementById(data));
+		}
+
+	</script>
+	<!--AUDIO-->
+	<script>
+    	$('document').ready(function(){
+        	var audio = document.getElementById("audio"); 
+        	audio.play();
+    	});
+	</script>
+
+	<script type="text/javascript">
+		audio = document.getElementById('audio');
+		
+		function mute(){
+
+        	if( audio.muted ){
+           		audio.muted = false;
+           		$('#icon_mute').removeClass('fa-volume-mute');
+           		$('#icon_mute').addClass('fa-volume-down');
+        	}else{
+            	audio.muted = true;
+            	$('#icon_mute').removeClass('fa-volume-down');
+           		$('#icon_mute').addClass('fa-volume-mute');
+       		}
+   		} 
+	</script>
+
+<!-- JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity=
+	"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity=
+	"sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity=
+	"sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
